@@ -8,7 +8,7 @@
   ],
   "id": "dnd-frostwhisper",
   "name": "霜语渡口",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "D&D 2024 中文原创短冒险：过河不要钱，只要一样你带得走、但不想给的东西。3 章 15 节点 4 结局，约 2.5 小时，3–5 人，含一场遭遇。",
   "plugin_type": "content-pack",
   "content_profile": "adventure-module",
@@ -36,6 +36,11 @@
     ],
     "map_locations": [
       "maps/locations/*.json"
+    ]
+  },
+  "requires": {
+    "rulesets": [
+      { "id": "core:dnd2024" }
     ]
   },
   "docs": "README.md"
