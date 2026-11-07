@@ -1,0 +1,17 @@
+{
+  "id": "midriver",
+  "name": "河心",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "barge",
+    "far_bank"
+  ],
+  "content": "水面平静无波纹，倒影里没有星星。水下有橘色光一排一排，约四十盏。",
+  "keywords": [
+    "河心",
+    "倒影",
+    "水光",
+    "安静"
+  ],
+  "tier": "core"
+}

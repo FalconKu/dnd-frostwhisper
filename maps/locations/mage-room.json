@@ -1,0 +1,16 @@
+{
+  "id": "mage_room",
+  "name": "法师的房间",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "inn"
+  ],
+  "content": "桌上符纸画一圈名字，名字之间有连线。她算的是「谁替谁应了」。",
+  "keywords": [
+    "法师",
+    "符纸",
+    "连线",
+    "研究"
+  ],
+  "tier": "background"
+}

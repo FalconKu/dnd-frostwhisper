@@ -1,0 +1,17 @@
+{
+  "id": "inn",
+  "name": "渡口客栈",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "dock",
+    "cellar"
+  ],
+  "content": "货堆到房梁，六十七张标签从 1886 到 1926。老板娘擦杯口提到「应声」会停半秒。",
+  "keywords": [
+    "客栈",
+    "货堆",
+    "标签",
+    "老板娘"
+  ],
+  "tier": "background"
+}

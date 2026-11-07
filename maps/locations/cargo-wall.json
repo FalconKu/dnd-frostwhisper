@@ -1,0 +1,16 @@
+{
+  "id": "cargo_wall",
+  "name": "货堆",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "inn"
+  ],
+  "content": "布匹铁器一口未开封的箱子，加零碎：靴子、怀表、婚戒、断笛。经手人全是「斯诺」。",
+  "keywords": [
+    "货堆",
+    "布匹",
+    "铁器",
+    "婚戒"
+  ],
+  "tier": "background"
+}

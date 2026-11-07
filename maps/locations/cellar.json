@@ -1,0 +1,16 @@
+{
+  "id": "cellar",
+  "name": "客栈地窖",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "inn"
+  ],
+  "content": "存着过河人的行李，四十年，没人来取。最里面一箱贴「易碎」，里面是空的。",
+  "keywords": [
+    "地窖",
+    "行李",
+    "易碎",
+    "空箱"
+  ],
+  "tier": "background"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "far_bank",
+  "name": "对岸雪坡",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "midriver",
+    "pass"
+  ],
+  "content": "三对眼睛在坡上等。风里夹着人声念名字，念一个停三秒。",
+  "keywords": [
+    "雪坡",
+    "霜狼",
+    "风",
+    "名字"
+  ],
+  "tier": "background"
+}

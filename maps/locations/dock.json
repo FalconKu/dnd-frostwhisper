@@ -1,0 +1,17 @@
+{
+  "id": "dock",
+  "name": "码头",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "inn",
+    "barge"
+  ],
+  "content": "两条船：驳船载十人，小艇载一个无桨。小艇船底泥上只有进去的脚印。",
+  "keywords": [
+    "码头",
+    "驳船",
+    "小艇",
+    "船篙"
+  ],
+  "tier": "background"
+}

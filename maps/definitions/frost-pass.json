@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "frost-pass",
+  "name": "霜语渡口与山口",
+  "mode": "graph",
+  "worlds": [
+    "frost_pass"
+  ],
+  "default": true,
+  "nodes": [
+    {
+      "location_ref": "inn",
+      "x": -30,
+      "y": 26
+    },
+    {
+      "location_ref": "cellar",
+      "x": -30,
+      "y": 14
+    },
+    {
+      "location_ref": "cargo_wall",
+      "x": -16,
+      "y": 30
+    },
+    {
+      "location_ref": "mage_room",
+      "x": -14,
+      "y": 18
+    },
+    {
+      "location_ref": "dock",
+      "x": -4,
+      "y": 24
+    },
+    {
+      "location_ref": "river_bank",
+      "x": -4,
+      "y": 10
+    },
+    {
+      "location_ref": "barge",
+      "x": 10,
+      "y": 22
+    },
+    {
+      "location_ref": "midriver",
+      "x": 22,
+      "y": 10
+    },
+    {
+      "location_ref": "far_bank",
+      "x": 34,
+      "y": -4
+    },
+    {
+      "location_ref": "pass",
+      "x": 34,
+      "y": -20
+    }
+  ],
+  "default_view": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "barge",
+  "name": "驳船",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "dock",
+    "midriver"
+  ],
+  "content": "舱壁刻四十年名字，每行末尾留一格。最新一行十一个名字，最后一个空格木屑还新。",
+  "keywords": [
+    "驳船",
+    "舱壁",
+    "名字",
+    "空格"
+  ],
+  "tier": "core"
+}

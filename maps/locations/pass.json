@@ -1,0 +1,16 @@
+{
+  "id": "pass",
+  "name": "山口",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "far_bank"
+  ],
+  "content": "风很大，夹着名字。路被踩出来，很窄。停下来的会被听见。",
+  "keywords": [
+    "山口",
+    "风",
+    "窄路",
+    "停"
+  ],
+  "tier": "background"
+}

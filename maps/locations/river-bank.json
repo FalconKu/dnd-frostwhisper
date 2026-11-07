@@ -1,0 +1,17 @@
+{
+  "id": "river_bank",
+  "name": "河岸",
+  "world_id": "frost_pass",
+  "connected_to": [
+    "inn",
+    "dock"
+  ],
+  "content": "碎石无声。趴下能看见水下橘光像村子的窗。夜里能听清念名字的节奏。",
+  "keywords": [
+    "河岸",
+    "碎石",
+    "水光",
+    "念名"
+  ],
+  "tier": "core"
+}

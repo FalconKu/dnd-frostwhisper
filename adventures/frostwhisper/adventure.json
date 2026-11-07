@@ -1,0 +1,420 @@
+{
+  "schema_version": 2,
+  "kind": "adventure",
+  "id": "frostwhisper",
+  "format": "diceframe:adventure-graph-v2",
+  "source_ref": "diceframe-original:dnd-frostwhisper",
+  "automation_level": "guided",
+  "name": "霜语渡口",
+  "summary": "过河不要钱，只要一样你带得走、但不想给的东西。上个月过河的十一人，货回来了，人没有。",
+  "estimated_minutes": 150,
+  "player_count": 4,
+  "recommended_level": 3,
+  "chapters": [
+    {
+      "id": "inn",
+      "name": "第一章：渡口客栈"
+    },
+    {
+      "id": "crossing",
+      "name": "第二章：过河"
+    },
+    {
+      "id": "last",
+      "name": "第三章：最后一趟"
+    }
+  ],
+  "start_node_ids": [
+    "the_inn"
+  ],
+  "nodes": [
+    {
+      "id": "the_inn",
+      "type": "decision",
+      "chapter_id": "inn",
+      "visibility": "public",
+      "name": "渡口客栈的货",
+      "description": "客栈一楼，炉火烧得半旺，屋里三个人，互相不看。\n\n墙角的货堆到房梁。每一件都绑着标签，日期从四十年前排到上个月。最上面那件是上个月商队的：一口没开封的箱子，标签写「易碎」。\n\n老板娘在擦杯子。她的动作很稳，只有提到「应声」两个字时会停一下。\n\n门口坐着商队护卫，一直看门。二楼下来一位灰袍法师，桌上摊着画满符的纸。\n\n窗外河面没有波纹，却一直有声音，像有人在很远的地方念名单。\n\n（三拨人，三种信息：护卫知道山口，法师知道机制，老板娘知道四十年。玩家只能先找其中一个。）",
+      "transitions": [
+        {
+          "to": "inn_guests",
+          "choice_id": "talk_to_guard",
+          "choice_label": "先找门口的护卫"
+        },
+        {
+          "to": "mage_talk",
+          "choice_id": "talk_to_mage",
+          "choice_label": "先找灰袍法师"
+        },
+        {
+          "to": "river_bank",
+          "choice_id": "go_to_the_bank",
+          "choice_label": "先去河岸看看水下有什么"
+        }
+      ],
+      "choice_mode": "exclusive"
+    },
+    {
+      "id": "the_ferryman",
+      "type": "decision",
+      "chapter_id": "inn",
+      "visibility": "public",
+      "name": "摆渡人的价码",
+      "description": "老斯诺把网收起来，说得很清楚：过河不要钱，要「一样你带得走、但不想给的东西」。\n\n他举了三个例子：\n一个名字。\n一段记性。\n一个还没说出口的承诺。\n\n「随便哪个都行。」他说，「你们自己挑。挑完了，我不问。」\n\n他说完看着你们，等你们选。\n\n码头上系着两条船：一条驳船能载十人，一条小艇只能载一个。\n\n（如果玩家问他交了什么：他会笑一下，说「我不记得了」。这是真话。）",
+      "choice_mode": "exclusive",
+      "transitions": [
+        {
+          "to": "the_barge_secret",
+          "choice_id": "sneak_aboard_at_night",
+          "choice_label": "半夜先摸上驳船看看"
+        },
+        {
+          "to": "the_barge",
+          "choice_id": "board_at_dawn",
+          "choice_label": "天亮就上船，不多问"
+        }
+      ]
+    },
+    {
+      "id": "the_barge_secret",
+      "type": "scene",
+      "chapter_id": "crossing",
+      "visibility": "public",
+      "name": "半夜的驳船",
+      "description": "你们摸上驳船时，船舱里已经有人——上个月那支商队的护卫，只剩他一个，蜷在货堆后面。他压低声音说，全队十一个人都把名字「给了」，过山口时听见有人叫，回头的一个个不见了；他没回头，所以还活着，但他说不出自己的名字了。船舱壁上刻满名字，最新一行十一个，最后一个空着，等你们的。",
+      "transitions": [
+        {
+          "to": "the_whisper"
+        }
+      ]
+    },
+    {
+      "id": "the_barge",
+      "type": "decision",
+      "chapter_id": "crossing",
+      "visibility": "public",
+      "name": "驳船与舱壁",
+      "description": "老斯诺撑船，全程不说话。\n\n船舱壁上刻着四十年的名字，密密麻麻，每一行最后都有一个空格。\n\n他停在河心，让你们看水面：水下有光，一排一排，像村子的窗。\n\n他说：「他们不是死了，是在下面等名字用完了。」\n\n然后他指了指舱壁上最新那行——十一个名字，最后一个空格是新的，木屑还没扫干净。\n\n（如果玩家数行数：一共三十七行。如果数空格：三十七个。每行最后都空一格，因为「总要有下一个」。）",
+      "transitions": [
+        {
+          "to": "cargo_tags",
+          "choice_id": "study_the_tags",
+          "choice_label": "研究舱壁与货签上的年份"
+        },
+        {
+          "to": "the_whisper",
+          "choice_id": "stay_silent",
+          "choice_label": "什么都不问，等靠岸"
+        }
+      ],
+      "choice_mode": "exclusive"
+    },
+    {
+      "id": "the_whisper",
+      "type": "decision",
+      "chapter_id": "crossing",
+      "visibility": "public",
+      "name": "应声的霜狼",
+      "description": "河对岸的雪坡上出现三对眼睛。\n\n霜狼不叫，只等。它们在等有人应声。\n\n风里夹着声音——不是狼叫，是人声，很轻，念着一个名字。那个名字，是你们中某一个人的。\n\n只要队伍里有人回应了那句「喂，是你吗」，狼群就会立刻冲下来。\n\n老斯诺站在船头不动，说：「别应。它们只是听。」\n\n（关键：狼不攻击「不应声」的人。它们只是在等一个信号。这个信号不一定来自你——也可能来自你的同伴。）",
+      "encounter_ref": "encounter_profile:frost_wolves",
+      "transitions": [
+        {
+          "to": "snow_pass",
+          "choice_id": "walk_to_the_pass",
+          "choice_label": "上岸，直接往山口走"
+        },
+        {
+          "to": "the_last_crossing",
+          "choice_id": "turn_back_to_ferryman",
+          "choice_label": "不上岸，回头找老斯诺"
+        }
+      ],
+      "choice_mode": "exclusive"
+    },
+    {
+      "id": "the_last_crossing",
+      "type": "decision",
+      "chapter_id": "last",
+      "visibility": "public",
+      "name": "最后一趟",
+      "description": "狼退开后，老斯诺把船靠岸，说这趟不收你们的价了——他已经收到「够用的」。\n\n他转身要走，你们看见他后颈上刻着一行字，和船舱壁上的字迹一样。\n\n四个选择：\n\n替商队把那十一个名字应下来，让货和人各归各位。\n烧掉这条驳船，断了这条路。\n把舱壁上最早的那个名字——他自己的名字——还给他。\n用一个名字换全队安全过河，然后什么都不改。\n\n河面很静。水下那些光还亮着。",
+      "choice_mode": "exclusive",
+      "transitions": [
+        {
+          "to": "ending_pay",
+          "choice_id": "answer_for_them",
+          "choice_label": "替商队把十一个名字应下来"
+        },
+        {
+          "to": "ending_burn",
+          "choice_id": "burn_the_barge",
+          "choice_label": "烧掉驳船"
+        },
+        {
+          "to": "ending_return",
+          "choice_id": "give_his_name_back",
+          "choice_label": "把他的名字还给他"
+        },
+        {
+          "to": "ending_trade",
+          "choice_id": "pay_and_go",
+          "choice_label": "交一个名字，换全队过河"
+        }
+      ]
+    },
+    {
+      "id": "ending_pay",
+      "type": "ending",
+      "chapter_id": "last",
+      "visibility": "public",
+      "name": "结局：下一个摆渡人",
+      "description": "你们中的一个站出来应了那一句。河面安静下来，水下的一排排光同时熄灭，像是在下班。十一个名字从舱壁上淡去，货堆上的标签一张张脱落。老斯诺把篙交到应声者手里，说：「明年这时候，会有人来替你。」他走进河里，没有溅起水花。渡口还在，船还在，只是撑船的人换了。",
+      "transitions": []
+    },
+    {
+      "id": "ending_burn",
+      "type": "ending",
+      "chapter_id": "last",
+      "visibility": "public",
+      "name": "结局：断桥",
+      "description": "火烧起来时，河面第一次起了波纹。老斯诺站在岸上看着，没有阻止，也没有笑。驳船烧到水线以下，河底的光一盏盏灭掉——不是下班，是被掐断。山口的路在三天后被雪封死，商队再没法从这边走，绕路要多花一个月。没有人再被收名字，也没有人再回来。客栈墙角的货，老板娘一直没动。",
+      "transitions": []
+    },
+    {
+      "id": "ending_return",
+      "type": "ending",
+      "chapter_id": "last",
+      "visibility": "public",
+      "name": "结局：把名字还给他",
+      "description": "你们把舱壁最上面那行名字刻痕磨平，念了出来。老斯诺愣了很久，然后开始哭——他四十年没哭过，因为忘了怎么哭。他变回一个普通的老人，姓什么、从哪来，都记起来了。河底的光失去了管理者，开始自己往上爬。当夜雪崩封了山口，渡口被埋了一半。老斯诺活下来了，但他每天都要去河边站一会儿，听一听，然后回家。",
+      "transitions": []
+    },
+    {
+      "id": "inn_guests",
+      "type": "scene",
+      "chapter_id": "inn",
+      "visibility": "public",
+      "name": "说不出名字的人",
+      "description": "护卫三十岁上下，左臂有旧伤，一直看门。\n\n问他叫什么，他会停很久，然后说：「你随便叫。」\n\n他是上个月那支十一人商队唯一的幸存者。全队都把名字「给了」。过山口时听见有人叫，回头的一个个不见了。他没回头，所以还活着。\n\n「我记得他们九个的名字。」他说，「我就忘了我自己的。」\n\n他能告诉你们：山口的风里会夹着名字；风大的时候不能停；以及那支商队里，有一个人是回头之后「笑着走的」。\n\n（他是全场最直观的代价展示：一个活着但没有名字的人。不要让他悲情，让他平静。）",
+      "transitions": [
+        {
+          "to": "mage_talk"
+        },
+        {
+          "to": "the_ferryman"
+        }
+      ]
+    },
+    {
+      "id": "mage_talk",
+      "type": "scene",
+      "chapter_id": "inn",
+      "visibility": "public",
+      "name": "契约，不是诅咒",
+      "description": "法师姓什么她不说。桌上那张符纸画的是一圈名字，名字之间有连线。\n\n她的判断很干脆：「这不是诅咒，是契约。有人立了约，用名字换一条能走的路。契约还在生效，因为还有人履行。」\n\n她能给的东西：\n一道「闭耳」法术。施法者一小时听不见任何声音——包括那声呼唤，也包括同伴的警告。\n一个机制解释：应声不是回答，是「承认这个名字属于你」。\n\n她的目的：找到契约的原始文本。她愿意用这道法术，换玩家从水下带回来的任何东西。\n\n（她最后会说一句：「你们要知道一件事。契约不会因为没人履行就失效，它只会换一个办法收。」）",
+      "transitions": [
+        {
+          "to": "the_ferryman"
+        }
+      ]
+    },
+    {
+      "id": "river_bank",
+      "type": "scene",
+      "chapter_id": "inn",
+      "visibility": "public",
+      "name": "水下的窗",
+      "description": "河岸是碎石，走上去没有声音。河面平整如镜，倒映着对岸的雪坡，但倒影里没有星星。\n\n趴在岸边往水下看，能看见光：一排一排，橘黄色，像村子的窗。数量在四十上下，从不移动。\n\n夜里靠近水边，能听清那声音：不是念名单，是在等。念一个名字，停三秒，再念下一个。没人应，就往下念。\n\n你们听见了自己的名字。\n\n停三秒。\n\n然后念下一个。\n\n（这个地点是全场的信息核心：玩家在这里能自己推出「水下是那些应了声的人」。不需要任何人告诉他们。）",
+      "transitions": [
+        {
+          "to": "the_ferryman"
+        }
+      ]
+    },
+    {
+      "id": "cargo_tags",
+      "type": "scene",
+      "chapter_id": "crossing",
+      "visibility": "public",
+      "name": "六十七张货签",
+      "description": "船舱壁上刻着四十年的名字，密密麻麻。老斯诺把灯举高，让你们看最上面那几行。\n\n配合客栈里的货签，能对上一个规律：每一年，至少一件货、一行名字。\n\n货签上的「经手人」一栏全部是「斯诺」。但字迹有三代：最老的是花体，中间是圆体，最近的是很硬的印刷体。\n\n这说明：摆渡人不是一个人，是一个位置。四十年来至少换过三代，每一代都叫斯诺。\n\n老斯诺看着你们算出来，没有说话。过了一会儿他说：「我是第三代。我不记得第一代长什么样，但我知道他叫什么。」\n\n（他没说「他叫什么」，因为那个名字就是「斯诺」。）",
+      "transitions": [
+        {
+          "to": "the_whisper"
+        }
+      ]
+    },
+    {
+      "id": "snow_pass",
+      "type": "scene",
+      "chapter_id": "crossing",
+      "visibility": "public",
+      "name": "山口的风",
+      "description": "上岸后是雪坡，坡上有一条被踩出来的路。风很大，风里有声音。\n\n走在前面的护卫突然停住。他说：「你们听见了吗？」\n\n风里夹着一个名字。不是你们的名字，是护卫的名字——那个他自己想不起来的名字。\n\n他站在那儿，手在抖。他没有回头，但他在犹豫。\n\n（这是全场最紧张的一刻，而且不需要战斗。玩家的选择只有两种：叫他继续走，或者让他回头。后者不是「失败」，是另一种代价。）",
+      "transitions": [
+        {
+          "to": "the_last_crossing"
+        }
+      ]
+    },
+    {
+      "id": "ending_trade",
+      "type": "ending",
+      "chapter_id": "last",
+      "visibility": "public",
+      "name": "结局：付了就走",
+      "description": "你们中的一个交了名字。不是最勇敢的那个，是最快的那个。\n\n老斯诺点点头，撑船，靠岸。全队过河，一件货没丢，一个人没少。\n\n过山口时风很大，风里夹着一个名字。没有人回头。\n\n三天后你们到了山那边。交名字的那位开始忘记一些小事：自己的生日、母亲的脸、小时候养的狗叫什么。他记得路，记得任务，记得你们每一个人的名字——只是不记得自己的。\n\n多年以后，有人在霜语渡口看见一个撑船的老人，问他叫什么，他想了很久，说：「你随便叫。」\n\n（这个结局最「划算」，也最安静。守秘人应当如实描述，不要加评判。）",
+      "transitions": []
+    }
+  ],
+  "objectives": [
+    {
+      "id": "learn_price",
+      "name": "弄清过河的代价",
+      "visibility": "public",
+      "node_ids": [
+        "the_inn",
+        "the_ferryman",
+        "mage_talk"
+      ]
+    },
+    {
+      "id": "see_the_lights",
+      "name": "看见水下那些光",
+      "visibility": "public",
+      "node_ids": [
+        "river_bank",
+        "the_barge"
+      ]
+    },
+    {
+      "id": "survive_the_pass",
+      "name": "过山口时不该应的不应",
+      "visibility": "public",
+      "node_ids": [
+        "the_whisper",
+        "snow_pass"
+      ]
+    },
+    {
+      "id": "decide_road",
+      "name": "决定这条路还留不留",
+      "visibility": "public",
+      "node_ids": [
+        "the_last_crossing"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "heard_call",
+      "name": "亲耳听见那声呼唤",
+      "visibility": "public",
+      "node_ids": [
+        "river_bank",
+        "the_whisper"
+      ]
+    },
+    {
+      "id": "met_nameless",
+      "name": "见到一个说不出自己名字的人",
+      "visibility": "public",
+      "node_ids": [
+        "inn_guests"
+      ]
+    },
+    {
+      "id": "three_generations",
+      "name": "发现摆渡人换过三代",
+      "visibility": "public",
+      "node_ids": [
+        "cargo_tags"
+      ]
+    },
+    {
+      "id": "made_choice",
+      "name": "在岸边做出决定",
+      "visibility": "public",
+      "node_ids": [
+        "the_last_crossing"
+      ]
+    }
+  ],
+  "world_seed": {
+    "entities": [
+      {
+        "entity_id": "location:crossing_inn",
+        "kind": "location"
+      },
+      {
+        "entity_id": "location:river_barge",
+        "kind": "location"
+      },
+      {
+        "entity_id": "npc:old_snow",
+        "kind": "npc"
+      },
+      {
+        "entity_id": "location:dock",
+        "kind": "location"
+      },
+      {
+        "entity_id": "location:bank",
+        "kind": "location"
+      },
+      {
+        "entity_id": "npc:mage",
+        "kind": "npc"
+      },
+      {
+        "entity_id": "npc:guard",
+        "kind": "npc"
+      },
+      {
+        "entity_id": "item:tags",
+        "kind": "item"
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "inn-to-barge",
+        "kind": "connects",
+        "from_ref": "location:crossing_inn",
+        "to_ref": "location:river_barge"
+      }
+    ],
+    "facts": [
+      {
+        "key": "public:crossing.rule",
+        "value": "过河不收钱，收「一样你带得走但不想给的东西」：名字、记忆、或一个还没说出口的承诺。",
+        "visibility": "public"
+      },
+      {
+        "key": "gm:snow.identity",
+        "value": "老斯诺是四十年前第一支商队的幸存向导。他把自己的名字给了河底的东西，换来撑船的差事——收别人的名字，自己就不被收。",
+        "visibility": "gm"
+      },
+      {
+        "key": "gm:river.thing",
+        "value": "河底的东西不杀人，它收集名字来「上岸」。名字越全，它越接近能离开水面。烧船会掐断供应，但已收的名字不会归还。",
+        "visibility": "gm"
+      },
+      {
+        "key": "gm:echo.mode",
+        "value": "应声 = 承认这个名字属于你。替别人应也算数；应不认识的名字不算。",
+        "visibility": "gm"
+      },
+      {
+        "key": "gm:snow.line",
+        "value": "摆渡人是一个位置，四十年换过三代，每一代都叫「斯诺」。",
+        "visibility": "gm"
+      },
+      {
+        "key": "gm:lights",
+        "value": "水下四十上下的橘色光，是四十年来应了声的人，在下面等名字用完。",
+        "visibility": "gm"
+      }
+    ],
+    "processes": []
+  }
+}

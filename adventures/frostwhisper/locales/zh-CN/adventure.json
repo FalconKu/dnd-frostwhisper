@@ -1,0 +1,14 @@
+{
+  "locale_schema_version": 1,
+  "locale": "zh-CN",
+  "target": {
+    "kind": "adventure",
+    "id": "frostwhisper"
+  },
+  "fields": {
+    "tutorial": {
+      "name": "霜语渡口",
+      "summary": "过河不要钱，只要一样你带得走、但不想给的东西。上个月过河的十一人，货回来了，人没有。"
+    }
+  }
+}

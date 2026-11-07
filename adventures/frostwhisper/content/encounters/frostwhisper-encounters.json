@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "encounter_catalog",
+  "id": "frostwhisper_encounters",
+  "source_ref": "diceframe-original:dnd-frostwhisper",
+  "automation_level": "deterministic",
+  "presets": [
+    {
+      "id": "frost_wolves",
+      "difficulty": "standard",
+      "enemies": [
+        {
+          "id": "frost-wolf-1",
+          "profile_id": "frost_wolf",
+          "hp": 11,
+          "armor_class": 13,
+          "speed": 50,
+          "position": 40,
+          "initiative_modifier": 2,
+          "abilities": {"str": 12, "dex": 15, "con": 12, "int": 3, "wis": 12, "cha": 6},
+          "saving_throws": {"str": 1, "dex": 2, "con": 1, "int": -4, "wis": 1, "cha": -2},
+          "attacks": [
+            {"id": "frost_bite", "attack_bonus": 4, "damage": "1d6+2", "damage_type": "cold", "range": 5, "long_range": 5}
+          ]
+        },
+        {
+          "id": "frost-wolf-2",
+          "profile_id": "frost_wolf",
+          "hp": 11,
+          "armor_class": 13,
+          "speed": 50,
+          "position": 45,
+          "initiative_modifier": 2,
+          "abilities": {"str": 12, "dex": 15, "con": 12, "int": 3, "wis": 12, "cha": 6},
+          "saving_throws": {"str": 1, "dex": 2, "con": 1, "int": -4, "wis": 1, "cha": -2},
+          "attacks": [
+            {"id": "frost_bite", "attack_bonus": 4, "damage": "1d6+2", "damage_type": "cold", "range": 5, "long_range": 5}
+          ]
+        },
+        {
+          "id": "frost-wolf-3",
+          "profile_id": "frost_wolf",
+          "hp": 11,
+          "armor_class": 13,
+          "speed": 50,
+          "position": 50,
+          "initiative_modifier": 2,
+          "abilities": {"str": 12, "dex": 15, "con": 12, "int": 3, "wis": 12, "cha": 6},
+          "saving_throws": {"str": 1, "dex": 2, "con": 1, "int": -4, "wis": 1, "cha": -2},
+          "attacks": [
+            {"id": "frost_bite", "attack_bonus": 4, "damage": "1d6+2", "damage_type": "cold", "range": 5, "long_range": 5}
+          ]
+        }
+      ]
+    }
+  ]
+}
